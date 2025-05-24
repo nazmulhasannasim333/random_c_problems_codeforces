@@ -2,22 +2,24 @@
 
 int main()
 {
-    char a[22], b[22];
-    scanf("%s %s", a, b);
-
-    char lastDigitA = a[strlen(a) - 1];
-    char lastDigitB = b[strlen(b) - 1];
-
-    int digitA = lastDigitA - '0';
-    int digitB = lastDigitB - '0';
-
-    if ((digitA + digitB) % 2 == 0)
+    int n;
+    scanf("%d", &n);
+    int a[n];
+    for (int i = 0; i < n; i++)
     {
-        printf("Even.");
+        scanf("%d", &a[i]);
     }
-    else
+    for (int i = 0; i < n; i++)
     {
-        printf("Odd.");
+        if (a[i] < 0)
+        {
+            a[i] = a[i + 1];
+        }
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", a[i]);
     }
 
     return 0;
